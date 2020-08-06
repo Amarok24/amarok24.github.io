@@ -1,0 +1,235 @@
+﻿:root {
+  --color-1: #1e3f72;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none; /* size adjustments OFF on small devices */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container img {
+    border: 0;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container h1 {
+    font-size: 1.9em;
+    line-height: 1.2;
+    text-align: left;
+    color: #000000; /* IE fallback */
+    color: var(--color-1);
+}
+
+.container h2 {
+    font-size: 1.5em;
+    line-height: 1.2;
+    text-align: left;
+    margin-top: 0.3em;
+}
+
+.container h3 {
+    font-size: 1.2em;
+    line-height: normal;
+    text-align: left;
+    margin-bottom: .5em;
+}
+
+.container h1 small {
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.container ul {
+    text-align: left;
+    margin: 0 0 1.3em;
+}
+
+.container ul:last-child {
+    margin-bottom: 0;
+}
+
+.container ul li {
+    list-style-type: none;
+    position: relative;
+    left: 1.3em;
+    width: calc(100% - 1.4em);
+}
+
+.container ul li::before {
+    content: "\2022";
+    /* – • ● ■ ▪ ◆ ❖ ✔ ✓ → » ▸ ▶ ► ➤ ➢ ➧ ➭ ➽ ➲ ⫽ 》❯ ➠ ◢ ◥ ☛ */
+    color: inherit;
+    position: absolute;
+    left: -1.3em;
+    top: 0;
+}
+
+.container ul ul {
+    margin-bottom: 0;
+}
+
+.container ul ul li {
+    left: 0;
+    padding-left: 1.3em;
+}
+
+.container ul ul li::before {
+    content: "\2013";
+    color: inherit;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.container a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.container a[href ^="mailto"] {
+    white-space: nowrap;
+}
+
+.container a[href ^="http"] {
+    text-decoration: none;
+}
+
+.container a[href ^="tel"] {
+    white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
+}
+
+.container a:hover {
+    color: #00005e;
+    text-decoration: underline;
+}
+
+.container p {
+    margin-bottom: 1.3em;
+}
+
+.container p:last-child {
+    margin-bottom: 0;
+}
+
+.container header {
+    position: relative;
+}
+
+.container footer {
+    padding: 4%;
+    background-color: powderblue;
+}
+
+.container address {
+    font-style: normal;
+}
+
+/* -=-=-=- CLASSES -=-=-=- */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid #e0e0e0;
+    color: #404040;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: left;
+    text-shadow: none;
+    background: white;
+    position: relative;
+}
+
+.container .logo {
+    position: absolute;
+    z-index: 99;
+    width: 18%;
+    left: 4%;
+    top: 5%;
+    border: none;
+    text-decoration: none;
+}
+
+.container .logo img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.container .title {
+    margin: 0 0 1em 0;
+    line-height: normal;
+}
+
+.container .content {
+    padding: 4%;
+}
+
+.container .flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* main-axis alignment, default: flex-start */
+    align-items: stretch; /* cross-axis alignment, default: stretch */
+    align-content: stretch; /* cross-axis lines alignment, default: stretch */
+}
+
+.container .flexItem {
+    /* flex: 0 1 auto; = default values for grow/shrink/basis */
+    /* order: 1; = can be used for individual item order */
+    /* align-self: stretch;  = individual cross-axis alignment (overriding align-items) */
+    flex: 0 1 48%;
+    margin-top: 1.5em;
+}
+
+.container .cf::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.container .nowrap,
+.container .nobr {
+    white-space: nowrap;
+}
+
+
+@media screen and (max-width: 640px) {
+    /* portrait view on all mobile devices */
+    .container {
+        font-size: 16px;
+    }
+    .container .title {
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        font-size: 0.8em;
+    }
+    .container .flexContainer {
+        display: block;
+    }
+    .container .mobile-hidden {
+        display: none;
+    }
+}
+
+@media print {
+    .noprint {
+        display: none !important;
+    }
+}
