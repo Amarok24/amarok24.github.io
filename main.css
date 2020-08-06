@@ -104,10 +104,6 @@ body {
     white-space: nowrap;
 }
 
-.container a[href ^="http"] {
-    text-decoration: none;
-}
-
 .container a[href ^="tel"] {
     white-space: nowrap;
     text-decoration: none;
